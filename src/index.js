@@ -280,4 +280,13 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
-client.login(process.env.DISCORD_TOKEN);
+const token = process.env.DISCORD_TOKEN;
+if (!token) {
+    console.error('❌ Missing DISCORD_TOKEN env var. Set it in your environment (hosting dashboard) or .env file.');
+    process.exit(1);
+}
+
+client.login(token).catch((err) => {
+    console.error('❌ Discord login failed:', err);
+    process.exit(1);
+});
