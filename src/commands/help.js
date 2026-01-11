@@ -1,5 +1,6 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { getLastUpdated } = require('../services/dataFetcher.js');
+const { getWikiLastUpdated } = require('../services/wikiFetcher.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -7,11 +8,26 @@ module.exports = {
         .setDescription('Shows all available ARC Raiders bot commands'),
     
     async execute(interaction) {
+        const wikiLastUpdatedIso = getWikiLastUpdated();
+        const wikiLastUpdated = wikiLastUpdatedIso
+            ? new Date(wikiLastUpdatedIso).toLocaleString()
+            : 'Never';
+
         const embed = new EmbedBuilder()
             .setColor(0x00AAFF)
             .setTitle('🤖 ARC Raiders Bot - Help')
-            .setDescription('Your ultimate companion for ARC Raiders information!\n*Auto-updates every 6 hours*')
+            .setDescription('Start here. Use `/db` and `/items` for the full game database (with images + links).')
             .addFields(
+                {
+                    name: '✅ Quick Start (copy/paste)',
+                    value: [
+                        '`/db query:bettina`',
+                        '`/items category:Weapons`',
+                        '`/loadout weapon:bettina`',
+                        '`/quests query:tempest`'
+                    ].join('\n'),
+                    inline: false
+                },
                 { 
                     name: '📰 /news [refresh]', 
                     value: 'Live news from Reddit & official sources', 
@@ -24,7 +40,7 @@ module.exports = {
                 },
                 { 
                     name: '🔫 /loadout [weapon]', 
-                    value: 'Weapon attachments with images', 
+                    value: 'Weapon page + best attachment recommendations', 
                     inline: true 
                 },
                 { 
@@ -38,8 +54,8 @@ module.exports = {
                     inline: true 
                 },
                 { 
-                    name: '📋 /quests [type]', 
-                    value: 'Daily/Weekly quest guides', 
+                    name: '📋 /quests [query]', 
+                    value: 'Quest database with images + details', 
                     inline: true 
                 },
                 { 
@@ -53,6 +69,16 @@ module.exports = {
                     inline: true 
                 },
                 { 
+                    name: '📦 /items [category]', 
+                    value: 'Browse wiki categories (weapons, maps, quests...)', 
+                    inline: true 
+                },
+                { 
+                    name: '📚 /db [query] [category] [refresh]', 
+                    value: 'Search the full wiki database with images/links', 
+                    inline: true 
+                },
+                { 
                     name: '❓ /help', 
                     value: 'This help menu', 
                     inline: true 
@@ -60,12 +86,28 @@ module.exports = {
             )
             .addFields({
                 name: '🔄 Auto-Updates',
-                value: `Data refreshes from Reddit & web sources\nLast update: ${getLastUpdated()}`,
+                value: `News update: ${getLastUpdated()}\nWiki database: ${wikiLastUpdated}`,
                 inline: false
             })
             .setFooter({ text: 'ARC Raiders Bot • Made with ❤️ for Raiders' })
             .setTimestamp();
 
-        await interaction.reply({ embeds: [embed] });
+        const row = new ActionRowBuilder()
+            .addComponents(
+                new ButtonBuilder()
+                    .setCustomId('help_weapons')
+                    .setLabel('Weapons')
+                    .setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder()
+                    .setCustomId('help_quests')
+                    .setLabel('Quests')
+                    .setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder()
+                    .setCustomId('help_refresh_wiki')
+                    .setLabel('Refresh Wiki')
+                    .setStyle(ButtonStyle.Primary)
+            );
+
+        await interaction.reply({ embeds: [embed], components: [row] });
     }
 };

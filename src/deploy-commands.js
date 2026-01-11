@@ -19,19 +19,31 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
         console.log(`🔄 Refreshing ${commands.length} application (/) commands...`);
 
         if (process.env.GUILD_ID) {
-            await rest.put(
-                Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
-                { body: commands }
-            );
-            console.log('✅ Commands registered for guild (instant update)');
+            try {
+                await rest.put(
+                    Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+                    { body: commands }
+                );
+                console.log('✅ Commands registered for guild (instant update)');
+            } catch (e) {
+                console.log('⚠️ Guild deploy failed, falling back to global...');
+                await rest.put(
+                    Routes.applicationCommands(process.env.CLIENT_ID),
+                    { body: commands }
+                );
+                console.log('✅ Commands registered globally!');
+                console.log('⏰ Note: Global commands may take up to 1 hour to appear in Discord');
+            }
         } else {
             await rest.put(
                 Routes.applicationCommands(process.env.CLIENT_ID),
                 { body: commands }
             );
-            console.log('✅ Commands registered globally (may take up to 1 hour)');
+            console.log('✅ Commands registered globally!');
+            console.log('⏰ Note: Global commands may take up to 1 hour to appear in Discord');
         }
+        
     } catch (error) {
-        console.error(error);
+        console.error('❌ Failed to deploy commands:', error.message);
     }
 })();

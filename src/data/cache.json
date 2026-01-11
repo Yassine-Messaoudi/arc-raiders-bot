@@ -1,5 +1,113 @@
 {
-  "news": [],
+  "news": [
+    {
+      "id": "1qabe0r",
+      "title": "To the guy who just walked up randomly and said ''Is today your lucky day?'' and gave me a bobcat blueprint, thank you. you truly made me happy. Stuff like this makes ARC Raiders so unique",
+      "url": "https://reddit.com/r/ArcRaiders/comments/1qabe0r/to_the_guy_who_just_walked_up_randomly_and_said/",
+      "date": "1/11/2026",
+      "source": "Reddit",
+      "score": 1,
+      "image": null
+    },
+    {
+      "id": "1qabchj",
+      "title": "Mom accidentaly became a Raider",
+      "url": "https://reddit.com/r/ArcRaiders/comments/1qabchj/mom_accidentaly_became_a_raider/",
+      "date": "1/11/2026",
+      "source": "Reddit",
+      "score": 1,
+      "image": "https://a.thumbs.redditmedia.com/jLPi38N3RIT2iHvb-uv_h4QwXMyvinkCaJoBBdMXRp8.jpg"
+    },
+    {
+      "id": "1qabcbz",
+      "title": "I need to make about 8,000 points, what should I try?",
+      "url": "https://reddit.com/r/ArcRaiders/comments/1qabcbz/i_need_to_make_about_8000_points_what_should_i_try/",
+      "date": "1/11/2026",
+      "source": "Reddit",
+      "score": 1,
+      "image": "https://preview.redd.it/8v4if7h0escg1.jpeg?auto=webp&s=94ac5401c34bdcea89ebb40ae6882dc94ab0cbc6"
+    },
+    {
+      "id": "1qabb1k",
+      "title": "My first rat kill",
+      "url": "https://reddit.com/r/ArcRaiders/comments/1qabb1k/my_first_rat_kill/",
+      "date": "1/11/2026",
+      "source": "Reddit",
+      "score": 1,
+      "image": "https://external-preview.redd.it/NWZma3A5OHJkc2NnMXkcJE9Z_PnQEN6hQGLTzAHo17fm0pnzIYy0c4uM6nHI.png?format=pjpg&auto=webp&s=0b65813b7bb88123ea6480e95d502da103d507e5"
+    },
+    {
+      "id": "1qab7tb",
+      "title": "Opinion: People That Circlejerk In Friendly Lobbies Are Worse Than Rats/PVP Players",
+      "url": "https://reddit.com/r/ArcRaiders/comments/1qab7tb/opinion_people_that_circlejerk_in_friendly/",
+      "date": "1/11/2026",
+      "source": "Reddit",
+      "score": 0,
+      "image": null
+    }
+  ],
   "meta": {},
-  "lastUpdated": null
+  "lastUpdated": "2026-01-11T21:19:44.995Z",
+  "loadouts": [],
+  "wikiLastUpdated": "2026-01-11T19:36:36.481Z",
+  "trials": {
+    "weekLabel": "Week 3: January 5, 2026 - January 11, 2026",
+    "sourceUrl": "https://arcraiders.wiki/wiki/Trials",
+    "image": "https://arcraiders.wiki/w/images/3/3b/Icon_Trials.png",
+    "trials": [
+      {
+        "title": "Damage Snitches",
+        "url": null,
+        "image": null
+      },
+      {
+        "title": "(Cold Snap) Throw snowballs at Bastions",
+        "url": "https://arcraiders.wiki/wiki/Throw_snowballs_at_Bastions",
+        "image": "https://arcraiders.wiki/w/images/3/32/Throw_snowball_at_Bastions.png"
+      },
+      {
+        "title": "Damage Bastions",
+        "url": null,
+        "image": null
+      },
+      {
+        "title": "Search Supply Drops",
+        "url": null,
+        "image": null
+      },
+      {
+        "title": "Harvest plants",
+        "url": "https://arcraiders.wiki/wiki/Harvest_plants",
+        "image": "https://arcraiders.wiki/w/images/f/f9/Harvest_Plants_Trial.png"
+      }
+    ],
+    "lastUpdated": "2026-01-11T21:19:44.994Z"
+  },
+  "alerts": {
+    "enabled": true,
+    "redditChannelId": "1460020593884921916",
+    "redditPingEveryone": false,
+    "redditEnabled": true,
+    "twitchChannelId": "1460013169610195117",
+    "twitchPingEveryone": false,
+    "twitchEnabled": true,
+    "twitchGameName": "ARC Raiders",
+    "twitchTopCount": 3,
+    "lastRedditUrl": "https://reddit.com/r/ArcRaiders/comments/1qabm1n/pure_cinema_shot_on_binoculars/",
+    "lastTwitchDay": null,
+    "channelId": "1460013169610195117",
+    "pingEveryone": false,
+    "streamsEnabled": true,
+    "streamers": [
+      {
+        "name": "Nadeshot",
+        "url": "https://www.twitch.tv/nadeshot"
+      },
+      {
+        "name": "itzTimmy",
+        "url": "https://www.twitch.tv/itztimmy"
+      }
+    ],
+    "lastStreamsDay": "2026-01-11"
+  }
 }

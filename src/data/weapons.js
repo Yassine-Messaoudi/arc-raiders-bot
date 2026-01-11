@@ -1,131 +1,192 @@
 const weapons = [
     {
-        id: "trenchgun",
-        name: "TRENCHGUN",
-        type: "SHOTGUN",
-        range: "CLOSE",
-        meta: "6 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder1.png",
-        attachments: [
-            { slot: "Muzzle", item: "COMPENSATOR" },
-            { slot: "Barrel", item: "REINFORCED BARREL" },
-            { slot: "Stock", item: "TACTICAL STOCK" },
-            { slot: "Underbarrel", item: "VERTICAL GRIP" },
-            { slot: "Magazine", item: "EXTENDED TUBE" },
-            { slot: "Rear Grip", item: "RUBBERIZED GRIP" }
-        ]
-    },
-    {
-        id: "vectorsmg",
-        name: "VECTOR",
-        type: "SMG",
-        range: "CLOSE",
-        meta: "7 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder2.png",
-        attachments: [
-            { slot: "Muzzle", item: "SUPPRESSOR" },
-            { slot: "Barrel", item: "SHORT BARREL" },
-            { slot: "Optic", item: "REFLEX SIGHT" },
-            { slot: "Stock", item: "NO STOCK" },
-            { slot: "Underbarrel", item: "MERC FOREGRIP" },
-            { slot: "Magazine", item: "50 ROUND DRUM" },
-            { slot: "Rear Grip", item: "STIPPLED GRIP" }
-        ]
-    },
-    {
-        id: "assaultrifle",
-        name: "AR-15 RAIDER",
+        id: "tempest",
+        name: "TEMPEST",
         type: "ASSAULT RIFLE",
         range: "MEDIUM",
-        meta: "8 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder3.png",
+        tier: "S",
+        meta: "BEST AR - 6 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/tempest.png",
         attachments: [
-            { slot: "Muzzle", item: "COMPENSATOR" },
-            { slot: "Barrel", item: "EXTENDED BARREL" },
-            { slot: "Optic", item: "HOLOGRAPHIC SIGHT" },
-            { slot: "Stock", item: "HEAVY STOCK" },
-            { slot: "Underbarrel", item: "RANGER FOREGRIP" },
-            { slot: "Magazine", item: "45 ROUND MAG" },
-            { slot: "Rear Grip", item: "ERGONOMIC GRIP" },
-            { slot: "Perk", item: "SLEIGHT OF HAND" }
+            { slot: "Muzzle", item: "Compensator I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "Reflex Sight" },
+            { slot: "Stock", item: "Stable Stock I" },
+            { slot: "Underbarrel", item: "Vertical Grip I" },
+            { slot: "Magazine", item: "Extended Medium Mag I" }
         ]
     },
     {
-        id: "dmr",
-        name: "DMR SCOUT",
-        type: "MARKSMAN RIFLE",
-        range: "LONG",
-        meta: "6 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder4.png",
-        attachments: [
-            { slot: "Muzzle", item: "SUPPRESSOR" },
-            { slot: "Barrel", item: "PRECISION BARREL" },
-            { slot: "Optic", item: "4X SCOPE" },
-            { slot: "Stock", item: "SNIPER STOCK" },
-            { slot: "Magazine", item: "20 ROUND MAG" },
-            { slot: "Rear Grip", item: "RUBBERIZED GRIP" }
-        ]
-    },
-    {
-        id: "lmg",
-        name: "MG-42 SUPPRESSOR",
-        type: "LMG",
-        range: "MEDIUM",
-        meta: "7 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder5.png",
-        attachments: [
-            { slot: "Muzzle", item: "HEAVY COMPENSATOR" },
-            { slot: "Barrel", item: "BULL BARREL" },
-            { slot: "Optic", item: "HYBRID SIGHT" },
-            { slot: "Stock", item: "TACTICAL STOCK" },
-            { slot: "Underbarrel", item: "BIPOD" },
-            { slot: "Magazine", item: "150 ROUND BOX" },
-            { slot: "Rear Grip", item: "GRANULATED GRIP" }
-        ]
-    },
-    {
-        id: "sniper",
-        name: "BOLT-ACTION X",
-        type: "SNIPER RIFLE",
-        range: "LONG",
-        meta: "5 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder6.png",
-        attachments: [
-            { slot: "Muzzle", item: "SILENCER" },
-            { slot: "Barrel", item: "LONG RANGE BARREL" },
-            { slot: "Optic", item: "8X SCOPE" },
-            { slot: "Stock", item: "PRECISION STOCK" },
-            { slot: "Rear Grip", item: "STIPPLED GRIP" }
-        ]
-    },
-    {
-        id: "pistol",
-        name: "P320 SIDEARM",
-        type: "PISTOL",
-        range: "CLOSE",
-        meta: "4 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder7.png",
-        attachments: [
-            { slot: "Muzzle", item: "SUPPRESSOR" },
-            { slot: "Barrel", item: "EXTENDED BARREL" },
-            { slot: "Magazine", item: "21 ROUND MAG" },
-            { slot: "Rear Grip", item: "TEXTURED GRIP" }
-        ]
-    },
-    {
-        id: "smg2",
-        name: "MP7 RUSH",
+        id: "bettina",
+        name: "BETTINA",
         type: "SMG",
         range: "CLOSE",
-        meta: "6 ATTACHMENTS META",
-        image: "https://i.imgur.com/placeholder8.png",
+        tier: "S",
+        meta: "BEST SMG - 5 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/bettina.png",
         attachments: [
-            { slot: "Muzzle", item: "MONO SUPPRESSOR" },
-            { slot: "Barrel", item: "COMPACT BARREL" },
-            { slot: "Optic", item: "RED DOT SIGHT" },
-            { slot: "Stock", item: "FOLDING STOCK" },
-            { slot: "Magazine", item: "40 ROUND MAG" },
-            { slot: "Rear Grip", item: "RUBBER GRIP" }
+            { slot: "Muzzle", item: "Silencer I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "Reflex Sight" },
+            { slot: "Stock", item: "Lightweight Stock" },
+            { slot: "Magazine", item: "Extended Light Mag I" }
+        ]
+    },
+    {
+        id: "valkyrie",
+        name: "VALKYRIE",
+        type: "MARKSMAN RIFLE",
+        range: "LONG",
+        tier: "A",
+        meta: "BEST DMR - 5 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/valkyrie.png",
+        attachments: [
+            { slot: "Muzzle", item: "Silencer I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "4x Scope" },
+            { slot: "Stock", item: "Stable Stock I" },
+            { slot: "Magazine", item: "Extended Medium Mag I" }
+        ]
+    },
+    {
+        id: "thunderclap",
+        name: "THUNDERCLAP",
+        type: "SHOTGUN",
+        range: "CLOSE",
+        tier: "A",
+        meta: "BEST SHOTGUN - 4 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/thunderclap.png",
+        attachments: [
+            { slot: "Muzzle", item: "Shotgun Choke I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Stock", item: "Padded Stock" },
+            { slot: "Magazine", item: "Extended Shotgun Mag I" }
+        ]
+    },
+    {
+        id: "guardian",
+        name: "GUARDIAN",
+        type: "LMG",
+        range: "MEDIUM",
+        tier: "A",
+        meta: "BEST LMG - 6 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/guardian.png",
+        attachments: [
+            { slot: "Muzzle", item: "Compensator I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "Reflex Sight" },
+            { slot: "Stock", item: "Stable Stock I" },
+            { slot: "Underbarrel", item: "Vertical Grip I" },
+            { slot: "Magazine", item: "Extended Medium Mag I" }
+        ]
+    },
+    {
+        id: "frontier",
+        name: "FRONTIER",
+        type: "SNIPER RIFLE",
+        range: "LONG",
+        tier: "A",
+        meta: "BEST SNIPER - 4 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/frontier.png",
+        attachments: [
+            { slot: "Muzzle", item: "Silencer I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "8x Scope" },
+            { slot: "Stock", item: "Stable Stock I" }
+        ]
+    },
+    {
+        id: "reaper",
+        name: "REAPER",
+        type: "SMG",
+        range: "CLOSE",
+        tier: "A",
+        meta: "FAST FIRE SMG - 5 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/reaper.png",
+        attachments: [
+            { slot: "Muzzle", item: "Muzzle Brake I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "Red Dot Sight" },
+            { slot: "Stock", item: "Lightweight Stock" },
+            { slot: "Magazine", item: "Extended Light Mag I" }
+        ]
+    },
+    {
+        id: "viper",
+        name: "VIPER",
+        type: "PISTOL",
+        range: "CLOSE",
+        tier: "B",
+        meta: "BEST PISTOL - 3 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/viper.png",
+        attachments: [
+            { slot: "Muzzle", item: "Silencer I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Magazine", item: "Extended Light Mag I" }
+        ]
+    },
+    {
+        id: "havoc",
+        name: "HAVOC",
+        type: "ASSAULT RIFLE",
+        range: "MEDIUM",
+        tier: "A",
+        meta: "HIGH DAMAGE AR - 6 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/havoc.png",
+        attachments: [
+            { slot: "Muzzle", item: "Muzzle Brake I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "4x Scope" },
+            { slot: "Stock", item: "Stable Stock I" },
+            { slot: "Underbarrel", item: "Angled Grip I" },
+            { slot: "Magazine", item: "Extended Medium Mag I" }
+        ]
+    },
+    {
+        id: "phantom",
+        name: "PHANTOM",
+        type: "SMG",
+        range: "CLOSE",
+        tier: "B",
+        meta: "STEALTH SMG - 5 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/phantom.png",
+        attachments: [
+            { slot: "Muzzle", item: "Silencer I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "Red Dot Sight" },
+            { slot: "Stock", item: "Lightweight Stock" },
+            { slot: "Magazine", item: "Extended Light Mag I" }
+        ]
+    },
+    {
+        id: "crusher",
+        name: "CRUSHER",
+        type: "SHOTGUN",
+        range: "CLOSE",
+        tier: "B",
+        meta: "AUTO SHOTGUN - 4 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/crusher.png",
+        attachments: [
+            { slot: "Muzzle", item: "Shotgun Choke I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Stock", item: "Padded Stock" },
+            { slot: "Magazine", item: "Extended Shotgun Mag I" }
+        ]
+    },
+    {
+        id: "sentinel",
+        name: "SENTINEL",
+        type: "MARKSMAN RIFLE",
+        range: "LONG",
+        tier: "B",
+        meta: "SEMI-AUTO DMR - 5 ATTACHMENTS",
+        image: "https://cdn.metaforge.app/arc-raiders/items/sentinel.png",
+        attachments: [
+            { slot: "Muzzle", item: "Compensator I" },
+            { slot: "Barrel", item: "Extended Barrel" },
+            { slot: "Optic", item: "4x Scope" },
+            { slot: "Stock", item: "Lightweight Stock" },
+            { slot: "Magazine", item: "Extended Medium Mag I" }
         ]
     }
 ];

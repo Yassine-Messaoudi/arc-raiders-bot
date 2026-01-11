@@ -1,42 +1,46 @@
 const metaLoadouts = {
     tierList: {
         S: [
-            { name: "AR-15 RAIDER", type: "Assault Rifle", reason: "Best all-round weapon, excellent damage and accuracy" },
-            { name: "VECTOR", type: "SMG", reason: "Insane TTK up close, melts enemies" }
+            { name: "TEMPEST", type: "Assault Rifle", reason: "Best all-round weapon, excellent damage and accuracy" },
+            { name: "BETTINA", type: "SMG", reason: "Insane TTK up close, melts enemies" }
         ],
         A: [
-            { name: "DMR SCOUT", type: "Marksman", reason: "One-tap headshots, great for PvP" },
-            { name: "MP7 RUSH", type: "SMG", reason: "Fast ADS, good mobility" },
-            { name: "MG-42 SUPPRESSOR", type: "LMG", reason: "Best for holding points and ARC swarms" }
+            { name: "VALKYRIE", type: "Marksman", reason: "One-tap headshots, great for PvP" },
+            { name: "REAPER", type: "SMG", reason: "Fast ADS, good mobility" },
+            { name: "GUARDIAN", type: "LMG", reason: "Best for holding points and ARC swarms" },
+            { name: "HAVOC", type: "Assault Rifle", reason: "High damage, great for PvE" },
+            { name: "THUNDERCLAP", type: "Shotgun", reason: "One-shot close range beast" },
+            { name: "FRONTIER", type: "Sniper", reason: "Best long range option" }
         ],
         B: [
-            { name: "TRENCHGUN", type: "Shotgun", reason: "Devastating up close but situational" },
-            { name: "BOLT-ACTION X", type: "Sniper", reason: "High skill ceiling, one-shot potential" }
+            { name: "CRUSHER", type: "Shotgun", reason: "Full-auto shotgun, fun but inconsistent" },
+            { name: "PHANTOM", type: "SMG", reason: "Stealth loadout, integrated suppressor" },
+            { name: "SENTINEL", type: "Marksman", reason: "Semi-auto DMR, good but outclassed" }
         ],
         C: [
-            { name: "P320 SIDEARM", type: "Pistol", reason: "Backup only, not primary viable" }
+            { name: "VIPER", type: "Pistol", reason: "Backup only, not primary viable" }
         ]
     },
     
     bestFor: {
         pvp: {
-            primary: "VECTOR",
-            secondary: "P320 SIDEARM",
+            primary: "BETTINA",
+            secondary: "VIPER",
             reason: "Fast TTK and mobility for player encounters"
         },
         pve: {
-            primary: "AR-15 RAIDER",
-            secondary: "TRENCHGUN",
+            primary: "TEMPEST",
+            secondary: "THUNDERCLAP",
             reason: "Versatility for ARC encounters at any range"
         },
         extraction: {
-            primary: "DMR SCOUT",
-            secondary: "MP7 RUSH",
+            primary: "VALKYRIE",
+            secondary: "REAPER",
             reason: "Long range picks + close range backup"
         },
         beginner: {
-            primary: "AR-15 RAIDER",
-            secondary: "P320 SIDEARM",
+            primary: "TEMPEST",
+            secondary: "VIPER",
             reason: "Forgiving and easy to use"
         }
     },
@@ -45,21 +49,21 @@ const metaLoadouts = {
         {
             name: "Starter Meta",
             difficulty: "Easy",
-            weapons: ["AR-15 RAIDER", "P320 SIDEARM"],
+            weapons: ["TEMPEST", "VIPER"],
             perks: ["Quick Hands", "Extra Ammo"],
             description: "Best loadout for new players, no rare attachments needed"
         },
         {
             name: "Rush King",
             difficulty: "Medium",
-            weapons: ["VECTOR", "TRENCHGUN"],
+            weapons: ["BETTINA", "THUNDERCLAP"],
             perks: ["Fast Reload", "Ghost"],
             description: "Aggressive close-range domination"
         },
         {
             name: "Overwatch",
             difficulty: "Hard",
-            weapons: ["DMR SCOUT", "MP7 RUSH"],
+            weapons: ["VALKYRIE", "REAPER"],
             perks: ["Spotter", "Cold Blooded"],
             description: "Control the map from distance"
         }
