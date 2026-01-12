@@ -1,6 +1,6 @@
 const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { trialsGuide } = require('../data/meta.js');
-const { getCachedData } = require('../services/dataFetcher.js');
+const { getCachedData, updateCachedData, fetchWeeklyTrialsFromWiki } = require('../services/dataFetcher.js');
 
 function youtubeSearchUrl(query) {
     const q = encodeURIComponent(String(query || '').trim());
@@ -123,7 +123,28 @@ module.exports = {
 
         if (sub === 'week') {
             const cache = getCachedData();
-            const weekly = cache?.trials || null;
+            let weekly = cache?.trials || null;
+
+            const isStale = (iso) => {
+                if (!iso) return true;
+                const t = new Date(iso).getTime();
+                if (!Number.isFinite(t)) return true;
+                return Date.now() - t > 30 * 60 * 1000;
+            };
+
+            if (!weekly?.trials?.length || isStale(weekly?.lastUpdated)) {
+                try {
+                    const fresh = await fetchWeeklyTrialsFromWiki();
+                    if (fresh?.trials?.length) {
+                        updateCachedData((d) => {
+                            d.trials = fresh;
+                        });
+                        weekly = fresh;
+                    }
+                } catch (e) {
+                    // ignore and use existing cache if present
+                }
+            }
 
             if (!weekly?.trials?.length) {
                 await interaction.reply({

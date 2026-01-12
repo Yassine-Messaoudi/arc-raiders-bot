@@ -301,10 +301,33 @@ async function fetchMetaforgeData() {
 
 async function fetchRedditNews() {
     try {
-        const response = await axios.get(SOURCES.reddit, {
-            headers: { 'User-Agent': 'ArcRaidersBot/1.0' },
-            timeout: 10000
-        });
+        const headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 ArcRaidersBot/1.0',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'en-US,en;q=0.9'
+        };
+
+        const candidates = [
+            `${SOURCES.reddit}?raw_json=1`,
+            'https://old.reddit.com/r/ArcRaiders/new.json?raw_json=1'
+        ];
+
+        let response = null;
+        let lastError = null;
+        for (const url of candidates) {
+            try {
+                response = await axios.get(url, {
+                    headers,
+                    timeout: 15000,
+                    maxRedirects: 5
+                });
+                break;
+            } catch (e) {
+                lastError = e;
+            }
+        }
+
+        if (!response) throw lastError || new Error('Reddit request failed');
         
         const posts = response.data?.data?.children || [];
         return posts.slice(0, 5).map(post => {
@@ -326,7 +349,9 @@ async function fetchRedditNews() {
             };
         });
     } catch (error) {
-        console.log('⚠️ Reddit fetch failed:', error.message);
+        const status = error?.response?.status;
+        const detail = status ? `status=${status}` : error.message;
+        console.log('⚠️ Reddit fetch failed:', detail);
         return [];
     }
 }
@@ -382,6 +407,7 @@ module.exports = {
     getCachedData,
     updateCachedData,
     getLastUpdated,
+    fetchWeeklyTrialsFromWiki,
     fetchRedditNews,
     SOURCES
 };
